@@ -26,6 +26,11 @@ h1, h2, h3, h4, h5 {
   padding:10px 0px 10px 0px;
 }
 
+/*reset button :focus*/
+.btn.focus, .btn:focus {
+  box-shadow: none;
+}
+
 #main { 
   /* background-color: aliceblue; */
 }
@@ -35,9 +40,14 @@ h1, h2, h3, h4, h5 {
   height: 100vh;
   min-height:800px;
 }
+.halfscreen {
+  width: 100%;
+  height: 50vh;
+  min-height:500px;
+}
 
-.startpage {
-  background: url('../images/landscape.jpg') no-repeat center center;
+.image-overlay {
+ /* background: url('../images/landscape.jpg') no-repeat center center;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -45,16 +55,31 @@ h1, h2, h3, h4, h5 {
   position: relative;
 }
 
-.startpage::before {
+.image-overlay::before {
   content: '';
-position: absolute;
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;
-background-image: linear-gradient(to bottom right,#002f4b,darkolivegreen);
-opacity: .6; 
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right,#303030,#303030);
+  opacity: .7; 
 }
+
+.bg-pos_cb {
+  background-position: center bottom !important;
+}
+.bg-pos_ct {
+  background-position: center top !important;
+}
+.bg-pos_cc {
+  background-position: center center !important;
+}
+.bg-pos_50_35 {
+  background-position: 50% 35% !important;
+}
+
+.bg-pos_l_
 
 .image-container {
   border-style:solid;
@@ -132,7 +157,7 @@ opacity: .6;
 
 /* NAVIGATION */
 #navigation .navbar{
-  transition: all .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
   background:#343a40;
 }
 
@@ -141,7 +166,7 @@ opacity: .6;
 }
 
 .scrolled-nav {
-  transition: all .3s ease-in-out;
+  /*transition: all .3s ease-in-out; */
   background-color: #343a40!important;
 }
 
@@ -212,4 +237,46 @@ footer .nav-link {
   -moz-transform:rotate(90deg);
   -webkit-transform:rotate(90deg);
   transform:rotate(90deg);
+}
+
+/* fa icons */
+
+button .fa-play {
+ font-size:80px !important;
+  color:#fff;
+  -webkit-transition:color 0.3s ease-in; 
+  -moz-transition:color 0.3s ease-in; 
+  -o-transition:color 0.3s ease-in; 
+  transition:color 0.3s ease-in; 
+}
+
+button .fa-play:hover{
+  color:darkolivegreen;
+}
+
+button .video-btn:focus {
+  box-shadow: none !important;
+}
+
+/*Video Modal*/
+
+.modal-dialog {
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.modal-body {
+  position:relative;
+  padding:0px;
+}
+
+.close {
+  position:absolute;
+  right:-30px;
+  top:0;
+  z-index:999;
+  font-size:2rem;
+  font-weight: normal;
+  color:#fff;
+  opacity:1;
 }
